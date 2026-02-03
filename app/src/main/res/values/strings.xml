@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Control de Asistencia</string>
+    <string name="app_logo">Logotipo</string>
+    <string name="btn_scan_qr">Scanear QR</string>
+    <string name="btn_admin_panel">Panel de administración</string>
+
+    <string name="admin_icon">icono de administrador</string>
+    <string name="admin_login_title">Administración</string>
+    <string name="email_or_username">Email o Nombre</string>
+    <string name="password">Contraseña</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="back_to_home">Regresar al Inicio</string>
+
 </resources>

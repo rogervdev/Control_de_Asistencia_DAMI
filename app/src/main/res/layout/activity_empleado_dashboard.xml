@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmpleadoDashboardActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 👤 Hola, María López -->
+            <TextView
+                android:id="@+id/tvBienvenida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hola, María López"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <!-- 🟢 Estado: Presente -->
+            <TextView
+                android:id="@+id/tvEstado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Estado: Presente"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp" />
+
+            <!-- 🕒 Entrada registrada: 08:12 AM -->
+            <TextView
+                android:id="@+id/tvUltimaMarcacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Entrada registrada: 08:12 AM"
+                android:textSize="15sp"
+                android:layout_marginTop="4dp" />
+
+            <!-- Botón de acción (opcional, según flujo) -->
+            <Button
+                android:id="@+id/btnAccionAsistencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Marcar Salida"
+                android:layout_marginTop="24dp"
+                android:visibility="gone" /> <!-- Puedes mostrarlo solo si es necesario -->
+
+            <!-- 📅 Últimos registros -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Últimos registros"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="32dp" />
+
+            <!-- Lista de días -->
+            <LinearLayout
+                android:id="@+id/containerHistorial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="12dp" />
+
+            <!-- 🔙 Volver al inicio -->
+            <TextView
+                android:id="@+id/tvVolverInicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔙 Volver al inicio"
+                android:textColor="#007BFF"
+                android:layout_marginTop="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="8dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

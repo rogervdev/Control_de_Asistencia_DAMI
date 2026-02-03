@@ -12,31 +12,68 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:padding="16dp">
+        android:padding="24dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_admin"
+            android:contentDescription="@string/admin_icon" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Panel de Administración"
-            android:textSize="20sp"
+            android:text="@string/admin_login_title"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginTop="16dp" />
 
-        <TextView
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Asistencias del día"
-            android:gravity="center"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginTop="24dp"
+            android:hint="@string/email_or_username">
 
-        <TextView
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Aquí se mostrarán las asistencias"
-            android:gravity="center"
-            android:textColor="#888888"/>
+            android:layout_marginTop="12dp"
+            app:passwordToggleEnabled="true"
+            android:hint="@string/password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnLoginAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:layout_marginTop="24dp" />
+
+        <TextView
+            android:id="@+id/tvBackToHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back_to_home"
+            android:layout_marginTop="16dp"
+            android:textColor="#007BFF"
+            android:clickable="true"
+            android:focusable="true" />
+
     </LinearLayout>
 
 

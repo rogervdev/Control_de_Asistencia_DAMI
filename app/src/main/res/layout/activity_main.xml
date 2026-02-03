@@ -11,39 +11,42 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_user"
-        />
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@mipmap/logo_empresa"
+        android:contentDescription="@string/app_logo" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Control de Asistencia"
-        android:layout_marginTop="16dp"
+        android:text="@string/app_name"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:textSize="16sp"/>
+        android:textSize="20sp"
+        android:layout_marginTop="24dp" />
 
     <Button
         android:id="@+id/btnEscanearQR"
+        style="@style/Widget.Material3.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ESCANEAR QR"
-        android:layout_marginTop="16dp"
-        android:paddingVertical="16dp"
-        android:paddingHorizontal="35dp"
-        android:backgroundTint="#C83030"/>
+        android:text="@string/btn_scan_qr"
+        android:layout_marginTop="24dp"
+        android:paddingHorizontal="48dp"
+        android:paddingVertical="12dp"
+        app:strokeColor="#C83030"
+        app:strokeWidth="2dp"
+        android:textColor="#C83030" />
 
     <Button
         android:id="@+id/btnPanelAdmin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PANEL DE ADMINISTRACIÓN"
+        android:text="@string/btn_admin_panel"
         android:layout_marginTop="16dp"
-        android:paddingVertical="16dp"
-        android:paddingHorizontal="35dp"
-        android:backgroundTint="#007BF5"/>
+        android:paddingHorizontal="48dp"
+        android:paddingVertical="12dp"
+        android:backgroundTint="#007BF5" />
 
 
 </LinearLayout>
