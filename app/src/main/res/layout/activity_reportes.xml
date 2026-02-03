@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReportesActivity">
+
+    <!-- activity_reportes.xml -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Generar Reporte de Asistencia"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <!-- Selección de fechas -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="Fecha de inicio"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etFechaInicio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:clickable="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Fecha de fin"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etFechaFin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:clickable="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Botón generar -->
+            <Button
+                android:id="@+id/btnGenerarReporte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔍 Generar Reporte"
+                android:layout_marginTop="16dp" />
+
+            <!-- Resumen estadístico -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Resumen"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="24dp" />
+
+            <LinearLayout
+                android:id="@+id/containerResumen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvTotalAsistencias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Asistencias: 42" />
+
+                <TextView
+                    android:id="@+id/tvTotalFaltas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Faltas: 8" />
+
+                <TextView
+                    android:id="@+id/tvHorasExtras"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Horas extras: 12h" />
+
+            </LinearLayout>
+
+            <!-- Lista detallada -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Detalle por empleado"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="24dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewDetalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false" />
+
+            <!-- Botón descargar -->
+            <Button
+                android:id="@+id/btnDescargar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📥 Descargar Reporte (PDF)"
+                android:layout_marginTop="24dp"
+                android:enabled="false" />
+
+            <!-- Mensaje sin datos -->
+            <TextView
+                android:id="@+id/tvSinDatos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selecciona un rango de fechas y genera el reporte"
+                android:gravity="center"
+                android:layout_marginTop="32dp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ControlDeAsistencia">
         <activity
+            android:name=".RegistroManualActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReportesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GestionEmpleadosActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListaAsistenciaActivity"
             android:exported="false" />
         <activity
