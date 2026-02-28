@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var btnEscanearQR: Button
 
+    lateinit var btnPanelAdmin : Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,16 +29,23 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        btnPanelAdmin = findViewById<Button>(R.id.btnPanelAdmin)
+
+        btnPanelAdmin.setOnClickListener {
+            startActivity(Intent(this, PanelAdminActivity::class.java))
+        }
+
         // 🔹 Referencia al botón
         btnEscanearQR = findViewById(R.id.btnEscanearQR)
 
         // 🔹 Acción del botón
-        btnEscanearQR.setOnClickListener {
-            abrirScanner()
-        }
+
+       // btnEscanearQR.setOnClickListener {
+         //   abrirScanner()
+        //}
     }
 
-    private fun abrirScanner() {
+   /* private fun abrirScanner() {
         val integrator = IntentIntegrator(this)
         integrator.setPrompt("Escanee el código QR")
         integrator.setBeepEnabled(true)
@@ -67,5 +76,5 @@ class MainActivity : AppCompatActivity() {
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
-    }
+    }*/
 }

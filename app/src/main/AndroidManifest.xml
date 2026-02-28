@@ -24,10 +24,10 @@
             android:name=".ListaAsistenciaActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminDashboardActivity"
+            android:name=".PanelAdminActivity"
             android:exported="false" />
         <activity
-            android:name=".EmpleadoDashboardActivity"
+            android:name=".PanelEmpleadoActivity"
             android:exported="false" />
         <activity
             android:name=".AdminActivity"
