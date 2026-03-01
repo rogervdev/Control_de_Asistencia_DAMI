@@ -19,13 +19,16 @@ class PanelAdminActivity : AppCompatActivity() {
 
     lateinit var btnCerrarSesion : Button
 
+    lateinit var btnAgregarEmleado : Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_admin_dashboard)
+        setContentView(R.layout.activity_admin_panel)
 
 
         btnListaAsistencia = findViewById<Button>(R.id.btnVerAsistencia)
+        btnAgregarEmleado = findViewById<Button>(R.id.btnAgregarEmpleado)
         btnRegistroManualAsistencia = findViewById<Button>(R.id.btnRegistrarManual)
         btnGestionarEmpleados = findViewById<Button>(R.id.btnGestionEmpleados)
         btnGenerarReporte = findViewById<Button>(R.id.btnReportes)
@@ -37,6 +40,9 @@ class PanelAdminActivity : AppCompatActivity() {
             startActivity(Intent(this, ListaAsistenciaActivity::class.java))
         }
 
+        btnAgregarEmleado.setOnClickListener {
+            startActivity(Intent(this, RegistroEmpleadoActivity::class.java))
+        }
 
         btnRegistroManualAsistencia.setOnClickListener {
             startActivity(Intent(this, RegistroManualActivity::class.java))

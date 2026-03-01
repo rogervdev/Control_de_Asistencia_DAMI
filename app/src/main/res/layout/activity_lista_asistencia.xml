@@ -40,10 +40,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:hint="Buscar empleado">
-            <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/etBusqueda"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="52dp"
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:singleLine="true"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 

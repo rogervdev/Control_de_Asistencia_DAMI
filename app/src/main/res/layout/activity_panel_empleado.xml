@@ -19,7 +19,7 @@
 
             <!-- 👤 Hola, María López -->
             <TextView
-                android:id="@+id/tvBienvenida"
+                android:id="@+id/tvNombreCompleto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hola, María López"

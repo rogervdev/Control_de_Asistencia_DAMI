@@ -39,10 +39,10 @@
             android:layout_marginTop="32dp" />
 
         <Button
-            android:id="@+id/btnRegistrarManual"
+            android:id="@+id/btnAgregarEmpleado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registrar Asistencia Manual"
+            android:text="Registrar Empleado"
             android:layout_marginTop="16dp" />
 
         <Button
@@ -51,6 +51,15 @@
             android:layout_height="wrap_content"
             android:text="Gestionar Empleados"
             android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnRegistrarManual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrar Asistencia Manual"
+            android:layout_marginTop="16dp" />
+
+
 
         <Button
             android:id="@+id/btnReportes"

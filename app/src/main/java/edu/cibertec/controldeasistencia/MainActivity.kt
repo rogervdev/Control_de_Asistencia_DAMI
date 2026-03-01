@@ -9,12 +9,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.zxing.integration.android.IntentIntegrator
+import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.LocalTime
+import java.util.Date
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var btnEscanearQR: Button
+    lateinit var btnEscanearQR: Button
 
     lateinit var btnPanelAdmin : Button
 
@@ -40,14 +43,15 @@ class MainActivity : AppCompatActivity() {
 
         // 🔹 Acción del botón
 
-       // btnEscanearQR.setOnClickListener {
-         //   abrirScanner()
-        //}
+       btnEscanearQR.setOnClickListener {
+            abrirScanner()
+        }
     }
 
-   /* private fun abrirScanner() {
+    private fun abrirScanner() {
         val integrator = IntentIntegrator(this)
-        integrator.setPrompt("Escanee el código QR")
+        integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
+        integrator.setPrompt("Escanee el código QR del empleado")
         integrator.setBeepEnabled(true)
         integrator.setOrientationLocked(true)
         integrator.initiateScan()
@@ -60,15 +64,21 @@ class MainActivity : AppCompatActivity() {
         if (result != null) {
             if (result.contents != null) {
 
-                val fecha = LocalDate.now().toString()
-                val hora = LocalTime.now().toString()
+                val codigoEmpleado = result.contents
 
-                // 👉 Aquí luego irá la BD
-                Toast.makeText(
-                    this,
-                    "Asistencia registrada\nFecha: $fecha\nHora: $hora",
-                    Toast.LENGTH_LONG
-                ).show()
+                val fechaActual = Date()
+                val formatoFecha = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                val formatoHora = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
+
+                val fecha = formatoFecha.format(fechaActual)
+                val hora = formatoHora.format(fechaActual)
+
+                // 🔥 Enviar datos al PanelEmpleadoActivity
+                val intent = Intent(this, PanelEmpleadoActivity::class.java)
+                intent.putExtra("codigo", codigoEmpleado)
+                intent.putExtra("fecha", fecha)
+                intent.putExtra("hora", hora)
+                startActivity(intent)
 
             } else {
                 Toast.makeText(this, "Escaneo cancelado", Toast.LENGTH_SHORT).show()
@@ -76,5 +86,5 @@ class MainActivity : AppCompatActivity() {
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
-    }*/
+    }
 }
